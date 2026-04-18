@@ -1,9 +1,10 @@
-# LeetCode Patterns
+# LeetCode
 
-This repository is organized by problem-solving pattern so practice reinforces
-recognition, not just problem numbers.
+This repository contains my LeetCode practice solutions.
 
 ## Structure
+
+Solutions are organized by pattern:
 
 ```text
 leetcode/
@@ -24,9 +25,12 @@ leetcode/
 │   └── 14-bit-manipulation/
 ```
 
-## Per-Problem Files
+Example:
 
-Contents for each problem folder:
+```text
+patterns/01-arrays-hashing/1-two-sum/solution.py
+```
 
-- `solution.py`: final accepted implementation
-- `notes.md`: idea, complexity, mistakes, and review notes
+## Goal
+
+I am grouping problems by pattern so it is easier to learn common approaches.

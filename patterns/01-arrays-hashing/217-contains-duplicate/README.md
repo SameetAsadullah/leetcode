@@ -21,7 +21,7 @@ Output: true
 - `1 <= nums.length <= 10^5`
 - `-10^9 <= nums[i] <= 10^9`
 
-## Algorithm
+## Approach 1: Set Scan
 
 Use a set to keep track of numbers already seen.
 
@@ -31,17 +31,17 @@ For each number:
 
 If the loop finishes, then all values are distinct, so return `false`.
 
-## Why It Works
+### Why It Works
 
 A set stores only unique values. The first time a number repeats, checking the
 set reveals that the value has already appeared, so we can return immediately.
 
-## Complexity
+### Complexity
 
 - Time: `O(n)`
 - Space: `O(n)`
 
-## Solution
+### Solution
 
 ```python
 from typing import List
@@ -58,3 +58,36 @@ class Solution:
 
         return False
 ```
+
+## Approach 2: One-Liner With `set`
+
+Convert the array to a set and compare lengths.
+
+If duplicates exist, the set becomes smaller because it stores only unique
+values.
+
+### Why It Works
+
+`set(nums)` removes duplicate values. If its length is smaller than the
+original array length, then at least one duplicate exists.
+
+### Complexity
+
+- Time: `O(n)`
+- Space: `O(n)`
+
+### Solution
+
+```python
+from typing import List
+
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        return len(set(nums)) != len(nums)
+```
+
+## Which One To Use
+
+- Use the set scan if you want the logic to be more explicit.
+- Use the one-liner if you want the shortest clean Python solution.

@@ -1,6 +1,6 @@
 from typing import List
 
-
+# Approach 1: Set Scan
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         seen = set()
@@ -11,3 +11,9 @@ class Solution:
             seen.add(num)
 
         return False
+
+
+# Approach 2: One-Liner with set
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        return len(set(nums)) != len(nums)

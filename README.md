@@ -28,7 +28,9 @@ leetcode/
 Example:
 
 ```text
-patterns/01-arrays-hashing/1-two-sum/solution.py
+patterns/01-arrays-hashing/1-two-sum/
+├── README.md
+└── solution.py
 ```
 
 ## Goal

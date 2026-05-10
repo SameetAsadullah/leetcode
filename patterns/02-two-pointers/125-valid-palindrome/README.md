@@ -44,8 +44,16 @@ palindrome requires.
 
 ## Complexity
 
-- Time: `O(n)`
-- Space: `O(1)`
+**Time:** `O(n)`
+
+Even though there are inner `while` loops, each pointer only moves in one
+direction and never revisits a character. That means each character is skipped
+or compared at most once overall.
+
+**Space:** `O(1)`
+
+We do not create a filtered string or any auxiliary data structure. The
+palindrome check is done directly on the original input with a few variables.
 
 ## Solution
 

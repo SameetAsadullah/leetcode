@@ -41,8 +41,16 @@ times in both strings. The frequency map stores that requirement directly.
 
 ### Complexity
 
-- Time: `O(n)`
-- Space: `O(n)`
+**Time:** `O(n)`
+
+We traverse `s` once to build the counts and traverse `t` once to subtract
+them. Each character is processed a constant number of times, so the total
+work grows directly with the string length.
+
+**Space:** `O(n)`
+
+The hash map stores one entry per distinct character seen in `s`. In the
+general version of the problem, that can scale with the input size.
 
 ### Solution
 
@@ -87,8 +95,16 @@ Matching characters cancel each other out, so every count must end at `0`.
 
 ### Complexity
 
-- Time: `O(n)`
-- Space: `O(1)`
+**Time:** `O(n)`
+
+The main loop runs once for each character position, updating one counter for
+`s[i]` and one for `t[i]`. The final pass over the 26 counters is constant
+time, so the linear scan dominates.
+
+**Space:** `O(1)`
+
+The frequency array always has exactly 26 slots for `a` through `z`, so its
+size does not grow with the input.
 
 ### Solution
 

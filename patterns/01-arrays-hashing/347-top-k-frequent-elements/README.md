@@ -45,8 +45,19 @@ are the `k` most frequent elements.
 
 ## Complexity
 
-- Time: `O(n)`
-- Space: `O(n)`
+**Time:** `O(n)`
+
+The work happens in three phases. First, we count each value once in `O(n)`.
+Second, we place each distinct value into one frequency bucket, which is at
+most another `O(n)` total. Third, we scan the bucket array from back to front.
+Even though there is a nested loop, each number is appended to the result at
+most once, so the total bucket scan is still linear overall.
+
+**Space:** `O(n)`
+
+The frequency map may store every distinct number. The bucket array has
+`len(nums) + 1` slots, and the final answer can contain up to `k` numbers.
+Altogether, the extra storage grows linearly with the input size.
 
 ## Solution
 

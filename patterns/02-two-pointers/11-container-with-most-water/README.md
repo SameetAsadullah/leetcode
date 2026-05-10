@@ -54,8 +54,16 @@ does not improve. So the correct move is always to shift the shorter side.
 
 ## Complexity
 
-- Time: `O(n)`
-- Space: `O(1)`
+**Time:** `O(n)`
+
+Each step moves exactly one pointer inward. Since `left` can move right at most
+`n - 1` times and `right` can move left at most `n - 1` times, the loop
+performs only a linear number of iterations.
+
+**Space:** `O(1)`
+
+The algorithm stores only the two pointers, the current area information, and
+the best answer found so far.
 
 ## Solution
 

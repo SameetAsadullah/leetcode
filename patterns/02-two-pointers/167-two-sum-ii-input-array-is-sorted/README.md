@@ -52,8 +52,16 @@ correct pair.
 
 ## Complexity
 
-- Time: `O(n)`
-- Space: `O(1)`
+**Time:** `O(n)`
+
+On every iteration, exactly one pointer moves inward. Because neither pointer
+ever moves backward, the two pointers can cross after at most one full pass
+across the array.
+
+**Space:** `O(1)`
+
+No auxiliary structure is needed because the sorted order itself gives the
+information we need to adjust the sum.
 
 ## Solution
 

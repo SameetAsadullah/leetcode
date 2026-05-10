@@ -52,8 +52,20 @@ added only once.
 
 ## Complexity
 
-- Time: `O(n^2)`
-- Space: `O(1)` extra space, excluding the output and Python's sort internals
+**Time:** `O(n^2)`
+
+Sorting costs `O(n log n)`, but the dominant part is the search afterward. For
+each fixed index `i`, the `left` and `right` pointers move across the remaining
+part of the array only once. That makes the inner work `O(n)` for each `i`, and
+repeating it across up to `n` choices of `i` gives `O(n^2)`. The
+duplicate-skipping loops do not change this bound because they only move the
+same pointers forward or backward, never resetting them.
+
+**Space:** `O(1)` extra space, excluding the output and Python's sort internals
+
+The search itself only uses indices and a few temporary values. The returned
+triplets are not counted as extra space, and the note about Python's sort
+internals is separate from the algorithmic idea here.
 
 ## Solution
 

@@ -53,8 +53,18 @@ That lets us solve the problem in one pass.
 
 ## Complexity
 
-- Time: `O(n)`
-- Space: `O(n)` for the output
+**Time:** `O(n)`
+
+The algorithm walks through the input in three phases, but the index `i` only
+moves forward and never resets. That means every interval is examined at most
+once: either copied before the merge, absorbed into `newInterval`, or appended
+afterward. So the total work remains linear.
+
+**Space:** `O(n)` for the output
+
+The returned list can contain nearly all original intervals, plus the merged
+interval that replaces the overlapping block. Since we build a new result list,
+the output size is the main space cost.
 
 ## Solution
 

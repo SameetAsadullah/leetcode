@@ -44,8 +44,17 @@ in constant time for each element.
 
 ## Complexity
 
-- Time: `O(n)`
-- Space: `O(n)`
+**Time:** `O(n)`
+
+We make one left-to-right pass through `nums`. For each element, we do a
+constant amount of work: compute the complement, check the hash map, and
+possibly insert the current value. Since hash map lookup and insert are `O(1)`
+on average, the full pass stays linear.
+
+**Space:** `O(n)`
+
+In the worst case, the answer is found near the end, so the hash map may need
+to store almost every earlier number and its index.
 
 ## Solution
 

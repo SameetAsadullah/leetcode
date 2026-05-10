@@ -45,8 +45,18 @@ should stay separate.
 
 ## Complexity
 
-- Time: `O(n log n)` because of sorting
-- Space: `O(n)` for the output
+**Time:** `O(n log n)` because of sorting
+
+The expensive step is sorting the intervals by start value, which takes
+`O(n log n)`. After sorting, we make one linear pass through the list and
+compare each interval only with the last merged one, so the merge phase is just
+`O(n)`. The sorting cost dominates the final complexity.
+
+**Space:** `O(n)` for the output
+
+If no intervals overlap, the output has to contain all `n` intervals. The
+merge logic itself uses only a small amount of extra state, so the output list
+is the main contributor to space usage.
 
 ## Solution
 

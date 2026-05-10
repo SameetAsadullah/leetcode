@@ -54,8 +54,16 @@ all elements except itself.
 
 ## Complexity
 
-- Time: `O(n)`
-- Space: `O(1)` extra space, excluding the output array
+**Time:** `O(n)`
+
+The algorithm makes one pass to build prefix products and one pass to apply
+postfix products. Each pass touches every index once, so the total work is
+about `2n`, which simplifies to `O(n)`.
+
+**Space:** `O(1)` extra space, excluding the output array
+
+We reuse the output array itself to store intermediate prefix values. Aside
+from that required output, only the two running product variables are used.
 
 ## Solution
 

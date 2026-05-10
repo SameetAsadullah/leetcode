@@ -38,8 +38,16 @@ set reveals that the value has already appeared, so we can return immediately.
 
 ### Complexity
 
-- Time: `O(n)`
-- Space: `O(n)`
+**Time:** `O(n)`
+
+We examine each value once. For every value, we only do a membership check and
+possibly an insert into the set, both of which are `O(1)` on average. That
+keeps the whole scan linear.
+
+**Space:** `O(n)`
+
+If there are no duplicates, the set grows to contain every element from the
+input.
 
 ### Solution
 
@@ -73,8 +81,14 @@ original array length, then at least one duplicate exists.
 
 ### Complexity
 
-- Time: `O(n)`
-- Space: `O(n)`
+**Time:** `O(n)`
+
+Converting `nums` into a set requires reading all elements once. After that,
+the length comparison is constant time.
+
+**Space:** `O(n)`
+
+The constructed set may contain all input values when they are all distinct.
 
 ### Solution
 

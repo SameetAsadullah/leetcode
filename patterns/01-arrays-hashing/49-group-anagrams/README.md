@@ -48,8 +48,18 @@ same group.
 
 Let `n` be the number of strings and `k` be the maximum string length.
 
-- Time: `O(n * k)`
-- Space: `O(n * k)`
+**Time:** `O(n * k)`
+
+There are `n` strings, and for each string we may scan all `k` of its
+characters to build the 26-count signature. The tuple conversion is constant
+size because the array always has length 26, so the per-word cost is still
+dominated by scanning the characters.
+
+**Space:** `O(n * k)`
+
+The grouped output stores all original strings, so the total stored content is
+proportional to the total input size. The hash map also needs one key per
+anagram group, but that does not exceed the same overall scale.
 
 ## Solution
 
